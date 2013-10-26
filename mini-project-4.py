@@ -1,5 +1,5 @@
 # template for "Stopwatch: The Game"
-
+import simplegui
 # define global variables
 
 
@@ -18,12 +18,10 @@ def format(t):
 
     
 # create frame
-
+frame = simplegui.create_frame("My frame",300,300)
 
 # register event handlers
 
 
 # start frame
-
-
-# Please remember to review the grading rubric
+frame.start()
