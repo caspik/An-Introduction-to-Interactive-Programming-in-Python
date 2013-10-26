@@ -15,13 +15,14 @@ def format(t):
 
 
 # define draw handler
-
+def draw(canvas):
+    canvas.draw_text("Hi!",[100,100],20,"Red")
     
 # create frame
 frame = simplegui.create_frame("My frame",300,300)
 
 # register event handlers
-
+frame.set_draw_handler(draw)
 
 # start frame
 frame.start()
