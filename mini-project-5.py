@@ -46,6 +46,15 @@ def draw(c):
         
 def keydown(key):
     global paddle1_vel, paddle2_vel
+    vel = 4
+    if key == simplegui.KEY_MAP["left"]:
+        ball_pos[0] -= vel
+    elif key == simplegui.KEY_MAP["right"]:
+        ball_pos[0] += vel
+    elif key == simplegui.KEY_MAP["down"]:
+        ball_pos[1] += vel
+    elif key == simplegui.KEY_MAP["up"]:
+        ball_pos[1] -= vel    
    
 def keyup(key):
     global paddle1_vel, paddle2_vel
