@@ -33,6 +33,21 @@ def draw(c):
     c.draw_line([WIDTH / 2, 0],[WIDTH / 2, HEIGHT], 1, "White")
     c.draw_line([PAD_WIDTH, 0],[PAD_WIDTH, HEIGHT], 1, "White")
     c.draw_line([WIDTH - PAD_WIDTH, 0],[WIDTH - PAD_WIDTH, HEIGHT], 1, "White")
+    
+def tick():
+    global time
+    time = time + 1
+    
+def draw(canvas):
+    # create a list to hold ball position
+    ball_pos = [0, 0]
+
+    # calculate ball position
+    ball_pos[0] = init_pos[0] + time * vel[0]
+    ball_pos[1] = init_pos[1] + time * vel[1]
+    
+    # draw ball
+    canvas.draw_circle(ball_pos, BALL_RADIUS, 2, "Red", "White")
         
     # update ball
             
@@ -59,6 +74,7 @@ def keydown(key):
 def keyup(key):
     global paddle1_vel, paddle2_vel
 
+timer = simplegui.create_timer(100, tick)
 
 # create frame
 frame = simplegui.create_frame("Pong", WIDTH, HEIGHT)
